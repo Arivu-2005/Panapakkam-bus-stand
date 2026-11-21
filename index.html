@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Daily bus timetable for Panapakkam bus stand: Vellore, Arcot, Arakkonam, Kanchipuram, Chennai and more.">
+<meta name="theme-color" content="#ffffff">
+<title>Panapakkam Bus | பனப்பாக்கம் பேருந்து</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='28' fill='%23e11d48'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle'%3E🚌%3C/text%3E%3C/svg%3E">
+<script>try{var th=JSON.parse(localStorage.getItem('pkm-theme'));document.documentElement.dataset.theme=th||'light'}catch(e){}</script>
+<noscript><style>#boot{display:none!important}</style></noscript>
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body class="boot">
+
+<div id="boot" role="status" aria-label="Loading">
+  <i class="bp t"></i><i class="bp b"></i>
+  <button type="button" id="skp" class="skp">Skip intro · தவிர்</button>
+  <div class="bc">
+    <h2 class="wm" id="wm" aria-label="Panapakkam"></h2>
+    <p class="wt">பனப்பாக்கம் பேருந்து நிலையம்</p>
+    <div class="fb" id="fb" aria-hidden="true"></div>
+    <div class="rd">
+      <div class="rl"><b id="rf"></b><u style="left:0"></u><u style="left:25%"></u><u style="left:50%"></u><u style="left:75%"></u><u style="left:100%"></u>
+        <span id="rb"><svg viewBox="0 0 44 26"><rect x="2" y="2" width="38" height="17" rx="4"/><path d="M2 11h38M30 2v9"/><circle cx="11" cy="21" r="3" fill="#06100D"/><circle cx="31" cy="21" r="3" fill="#06100D"/></svg></span></div>
+      <div class="rm"><span id="rg">வணக்கம்</span><b id="rp">0%</b></div>
+    </div>
+  </div>
+</div>
+
+<header class="top"><div class="w">
+  <a class="brand" href="#top" aria-label="Panapakkam Bus"><svg viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="11" fill="var(--ac)"/><path d="M8 22V12.5a2.5 2.5 0 0 1 2.5-2.5h13a2.5 2.5 0 0 1 2.5 2.5V22M8 16h18M11 22v2M23 22v2" fill="none" stroke="var(--on)" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="19" r="1" fill="var(--on)"/><circle cx="22" cy="19" r="1" fill="var(--on)"/></svg>Panapakkam <span style="color:var(--mut);font-weight:400">Bus</span></a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#top" data-i="navHome">Next bus</a>
+    <a href="#stage" data-i="navTerm">3D terminal</a>
+    <a href="#brd" data-i="navBoard">Departures</a>
+    <a href="#find" data-i="navTimes">Timings</a>
+    <a href="#dest" data-i="navDest">Destinations</a>
+    <a href="#alerts"><span data-i="navAlerts">Alerts</span><b id="na" hidden></b></a>
+    <a href="#about" data-i="navAbout">About</a>
+  </nav>
+  <div class="acts">
+    <button class="ib" id="ins" type="button" hidden><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg><span data-i="ins">Install</span></button>
+    <button class="ib" id="oc" type="button" aria-haspopup="dialog"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span data-i="search">Search</span><kbd>/</kbd></button>
+    <button class="ib" id="lg" type="button" aria-label="Language"><strong id="ll">தமிழ்</strong></button>
+    <button class="ib" id="tb" type="button" aria-label="Theme"><svg id="ti" viewBox="0 0 24 24"></svg></button>
+  <a class="cta" href="#brd" data-i="cta">Find next bus</a>
+  </div>
+</div></header>
+
+<section class="hx">
+  <div class="w">
+    <p class="live rise" style="--i:0"><i></i><b id="clk">--:--</b><span data-i="tz">Panapakkam time</span><span class="sch" data-i="sched">Scheduled times, not live</span></p>
+    <h1 class="rise" style="--i:1" data-i="h1">Every bus from Panapakkam, exactly when you need it.</h1>
+    <p class="lede rise" style="--i:2" data-i="lede">See what leaves next, pick your town and pin the buses you ride daily.</p>
+    <div class="hb-row rise" style="--i:3">
+      <a class="btn p" href="#brd"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-i="cta">Find next bus</span></a>
+      <a class="btn" href="./data/panapakkam-board-full.pdf" download><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg><span data-i="pdf">Download PDF board</span></a>
+      <button class="btn" id="hs" type="button"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span data-i="search">Search</span></button>
+    </div>
+    <div class="stage rise" style="--i:3" id="stage" tabindex="0" role="group" aria-label="Interactive 3D bus terminal"><div class="stage-loading" data-i="l3">Loading 3D terminal…</div><span class="stage-hint" data-i="hint">Tap a bus to pick its route. Drag to turn.</span></div>
+  </div>
+</section>
+<main id="top" inert>
+<div class="w">
+  <section class="card con rise" style="--i:4" aria-labelledby="cont">
+    <div class="con-h"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v10M5 12h14M8 17v2M16 17v2"/><circle cx="8.5" cy="14.5" r=".6"/><circle cx="15.5" cy="14.5" r=".6"/></svg></i><div><h2 id="cont" data-i="conT">Next bus from Panapakkam</h2><p data-i="conS">Tap the card for details, to pin or share.</p></div></div>
+    <button class="nx rise" style="--i:3" id="nx" type="button"></button>
+  </section>
+</div>
+<section class="strip" aria-label="Today"><div class="w"><div class="stats rise" style="--i:5"><div><strong id="s1">0</strong><span data-i="s1">Buses today</span></div><div><strong id="s2">0</strong><span data-i="s2">Destinations</span></div><div><strong id="s3">–</strong><span data-i="s3">First to last</span></div></div></div></section>
+<div class="w">
+  <div id="bn"></div>
+
+  <section class="card mine" id="mine" hidden aria-labelledby="mt"><div class="gh"><h3 id="mt" data-i="mine">Saved buses and routes</h3></div><div class="mrow" id="mrow"></div></section>
+
+  <div class="sec-h" id="brd"><p class="eb" data-i="ebBoard">Scheduled departures</p><h2 data-i="board">Departing next</h2></div>
+  <section class="card board rise" style="--i:6" aria-labelledby="bt"><div class="bh"><h2 id="bt" data-i="sched">Scheduled times, not live</h2><span id="bc">--:--</span></div><div id="brows"></div></section>
+
+  <section class="alerts" id="alerts" style="margin-top:0" aria-labelledby="alt"><div class="rh"><div><p class="eb" data-i="navAlerts">Alerts</p><h2 id="alt" data-i="al">Service alerts</h2></div><span data-i="alH">Delays, cancellations and diversions, newest first.</span></div><div class="al" id="al" aria-live="polite"></div></section>
+
+  <div class="sec-h" id="findh"><p class="eb" data-i="ebFind">Find your bus</p><h2 data-i="navTimes">Timings</h2></div>
+  <section class="card find" id="find" aria-label="Search" style="margin-top:0">
+    <div class="sb" id="sbx"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" autocomplete="off" data-ip="ph" aria-label="Search"><button type="button" class="mic" id="mic" hidden aria-label="Voice search"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button><button type="button" id="qc" aria-label="Clear">✕</button></div>
+    <div class="tools">
+      <div class="seg" id="per" role="radiogroup"></div>
+      <div class="sw">
+        <label class="swi"><input type="checkbox" id="up" checked><span data-i="up">Upcoming only</span></label>
+        <label class="swi"><input type="checkbox" id="pn"><span data-i="pinOnly">Pinned only</span></label>
+        <label class="swi"><input type="checkbox" id="h24"><span data-i="h24">24-hour time</span></label>
+        <button type="button" class="lk" id="csv" data-i="csv">Export CSV</button>
+        <button type="button" class="lk" id="rs" data-i="reset">Reset</button>
+      </div>
+    </div>
+  </section>
+  <section class="card glance" aria-labelledby="gt"><div class="gh"><h3 id="gt" data-i="gl">Day at a glance</h3><span data-i="glh">Tap an hour to filter</span></div><div class="bars" id="bars"></div><div class="axis" id="axis" aria-hidden="true"></div></section>
+
+  <div class="rh" id="dest"><div><p class="eb" data-i="ebDest">Every route</p><h2 data-i="routes">Destinations</h2></div><div class="rr"><span id="cnt" aria-live="polite"></span><button type="button" class="lk" id="fv" hidden></button></div></div>
+  <div class="tabs" id="tabs" role="group"></div>
+  <section id="tt" aria-label="Timetable"><div id="rows"></div></section>
+
+  <section class="info" aria-label="Station information">
+    <div class="card notice"><div class="nh"><span class="nw"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/></svg></span><div><h3>Passenger Operational Notice <em lang="ta">• முக்கிய அறிவிப்பு</em></h3><p data-i="nb"></p></div></div>
+      <div class="ams"><h4 data-i="am"></h4><ul><li class="am" style="--c:var(--bl)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg><span data-i="a1"></span></li><li class="am" style="--c:var(--ok)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6 19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg><span data-i="a2"></span></li><li class="am" style="--c:var(--ac)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M9 6v12"/></svg><span data-i="a3"></span></li><li class="am" style="--c:var(--mut)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="3"/><path d="M6 21v-4a6 6 0 0 1 12 0v4"/></svg><span data-i="a4"></span></li><li class="am" style="--c:var(--ok)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span data-i="a5"></span></li></ul></div></div>
+    <div class="card init"><span class="hub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg><span data-i="hub"></span></span><h3 data-i="it"></h3><p data-i="ib"></p>
+      <div class="by"><div><small data-i="by"></small><button type="button" id="cb">Arivazhagan M</button></div><button type="button" class="hb" id="hb" aria-label="About the developer"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button></div></div>
+  </section>
+
+  <section class="about" id="about" aria-labelledby="abt">
+    <div class="card ab">
+      <h3 id="abt" data-i="abT"></h3><p data-i="abB"></p>
+      <div class="lv"><h4 data-i="lvT"></h4><p data-i="lvB"></p></div>
+      <div class="row" id="ctr"></div>
+    </div>
+    <div class="card qr"><div class="q" id="qrb"></div><h3 data-i="qrT"></h3><p data-i="qrB"></p><button class="btn" type="button" id="qrd" hidden data-i="qrDl"></button></div>
+  </section>
+
+
+</div>
+</main>
+<footer class="ft">
+  <div class="w">
+    <div class="ft-g">
+      <div><div class="fb2">Panapakkam Bus</div><p data-i="ftAbout">Scheduled departures from Panapakkam bus stand, in Tamil and English. Times follow the bus stand board; this is not live tracking.</p></div>
+      <div><h3 data-i="ftEx">Explore</h3><ul>
+        <li><a href="#top" data-i="navHome">Next bus</a></li><li><a href="#stage" data-i="navTerm">3D terminal</a></li><li><a href="#find" data-i="navTimes">Timings</a></li><li><a href="#dest" data-i="navDest">Destinations</a></li><li><a href="#alerts" data-i="navAlerts">Alerts</a></li><li><a href="#about" data-i="navAbout">About</a></li></ul></div>
+      <div><h3 data-i="ftRs">Resources</h3><ul>
+        <li><a href="./data/panapakkam-board-full.pdf" download data-i="pdf">Download PDF board</a></li><li><button type="button" id="rpl">&#8634; <span data-i="rpl"></span></button></li></ul></div>
+    </div>
+    <div class="ft-b"><p>&copy; 2026 Panapakkam Bus <i style="font-style:normal">&bull;</i> <span lang="ta">பனப்பாக்கம் பேருந்து வழிகாட்டி</span></p><p class="fd"><b></b><span id="fs"></span></p></div>
+  </div>
+</footer>
+
+
+<button class="jump" id="jp" type="button" data-i="jump">Jump to next bus</button>
+<dialog id="sheet" aria-label="Bus details"></dialog>
+<dialog id="cmd" aria-label="Search"><div><input id="ci" type="text" autocomplete="off" data-ip="cph" aria-label="Search"></div><div id="cl" role="listbox"></div></dialog>
+<dialog id="dev"><div class="sb2"><h2>Arivazhagan M</h2><p data-i="dev">Developer of Panapakkam Bus, built to put the local bus stand timetable on every phone.</p><button class="btn p" type="button" id="dc" data-i="close" style="justify-content:center">Close</button></div></dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(()=>{'use strict';
+/* ===== Settings: fill in your real contact details. Empty values are hidden. ===== */
+const CFG={phone:'',whatsapp:'',email:''};
+
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)],sl=ms=>new Promise(r=>setTimeout(r,ms));
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const st={g(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch{return d}},s(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pad=n=>String(n).padStart(2,'0');
+const ld=(src,to=7000)=>new Promise(r=>{const s=document.createElement('script');s.src=src;s.onload=()=>r(true);s.onerror=()=>r(false);document.head.appendChild(s);setTimeout(()=>r(false),to)});
+
+const I={en:{navTerm:'3D terminal',navBoard:'Departures',cta:'Find next bus',ebBoard:'Scheduled departures',ebFind:'Find your bus',ebDest:'Every route',conT:'Next bus from Panapakkam',conS:'Tap the card for details, to pin or share.',ftAbout:'Scheduled departures from Panapakkam bus stand, in Tamil and English. Times follow the bus stand board; this is not live tracking.',ftEx:'Explore',ftRs:'Resources',tz:'Panapakkam time',sched:'Scheduled times, not live',h1:'Every bus from Panapakkam, exactly when you need it.',lede:'See what leaves next, pick your town and pin the buses you ride daily.',pdf:'Download PDF board',s1:'Buses today',s2:'Destinations',s3:'First to last',l3:'Loading 3D terminal…',hint:'Tap a bus to pick its route. Drag to turn.',no3d:'3D view is not available on this device. The timetable works normally.',board:'Departing next',search:'Search',ph:'Search a town, bus name, number or time (Tamil or English)',cph:'Search towns or buses',up:'Upcoming only',pinOnly:'Pinned only',h24:'24-hour time',reset:'Reset',routes:'Destinations',all:'All',morning:'Morning',afternoon:'Afternoon',evening:'Evening',night:'Night',allDay:'All day',inMin:'in {n} min',inHM:'in {h} h {m} min',leaving:'Leaving now',gone:'Departed',noMore:'No more buses today.',tom:'First bus tomorrow at {t}.',eT:'Nothing matches',eB:'Try another town, or reset the filters.',dT:'No more buses today',dB:'Switch off Upcoming only to see the full day.',showAll:'Show full day',jump:'Jump to next bus',nextTag:'Next',next:'Next departure',view:'Tap for details',pin:'Pin this bus',unpin:'Unpin',pinned:'Pinned',wa:'WhatsApp',link:'Copy link',rem:'Add reminder',s3d:'Show on 3D',others:'Other departures of this bus',copied:'Link copied',pM:'Pinned. Find it under Pinned only.',uM:'Unpinned',nN:'{n} buses',n1:'1 bus',chk:'Verify timing',bay:'Platform (unverified)',foot:'Timetable information is provided for guidance only, not live tracking. Confirm departure details locally before travelling.',cr:'Developed by',dev:'Developer of Panapakkam Bus, built to put the local bus stand timetable on every phone.',close:'Close',cR:'Destinations',cB:'Buses',cN:'Nothing found',sample:'Showing sample data because data/timetable.js did not load.',unv:'This timetable has unverified entries. Confirm timings at the stand.',off2:'Showing the last saved timetable because the latest one could not load.',min:'min',now:'now',mine:'Saved buses and routes',gl:'Day at a glance',glh:'Tap an hour to filter',tmr:'Tomorrow',nb:'Timings are subject to operational conditions, depot rotations and highway traffic along the Ranipet and Walajah bypasses. Please verify live platform updates on the Bay 1 digital displays.',am:'Before you travel',a1:'Confirm departure time',a2:'Check destination board',a3:'Arrive a little early',a4:'Keep fare ready',a5:'Ask staff if unsure',hub:'Community transit guide',it:'Panapakkam Bus',ib:'A community-oriented bus timetable interface. Timings and platform details should be confirmed with the operator or at the stand.',by:'Created and maintained by',rpl:'Replay intro',srcF:'Timetable loaded, {n} buses. Updated {d}.',srcC:'Offline copy, {n} buses. Last synced {d}.',srcP:'Published on this device, {n} buses. {d}.',smp:'Sample data shown',ntf:'Notify me',ins:'Install',nons:'Notifications are not supported in this browser.',nod:'Notifications are blocked. Allow them in your browser settings.',late:'Less than 10 minutes left, so no reminder was set.',set:'Reminder set for 10 minutes before. Keep this tab open.',navHome:'Next bus',navTimes:'Timings',navDest:'Destinations',navAlerts:'Alerts',navAbout:'About',csv:'Export CSV',csvDone:'CSV downloaded',al:'Service alerts',alH:'Delays, cancellations and diversions, newest first.',alNone:'No service alerts right now.',alExp:'Until {d}',alPost:'Posted {d}',alView:'View route',tD:'Delayed',tC:'Cancelled',tV:'Diverted',tX:'Time changed',tI:'Notice',fav:'Save route',favOn:'Saved route',favM:'Route saved',ufM:'Route removed',abT:'About Panapakkam bus stand',abB:'Daily timetable for buses leaving Panapakkam towards Vellore, Arcot, Arakkonam, Kanchipuram, Chennai and nearby towns. Times are scheduled departures and can change with traffic and depot rotation.',lvT:'Live tracking',lvB:'Planned. Real-time bus location needs GPS devices or a verified tracking source. Until then, every time here is a scheduled time.',qrT:'Scan for the latest timetable',qrB:'Print this on the timetable board.',qrDl:'Download QR',qrNo:'The QR code needs an internet connection once to load.',call:'Call',wa2:'WhatsApp',mail:'Email',adm:'Admin',off:'You are offline. Showing the saved timetable.',on:'Back online.'},
+ta:{navTerm:'3D நிலையம்',navBoard:'புறப்பாடு',cta:'அடுத்த பேருந்து',ebBoard:'திட்டமிட்ட புறப்பாடுகள்',ebFind:'உங்கள் பேருந்தைத் தேடுங்கள்',ebDest:'அனைத்து வழித்தடங்கள்',conT:'பனப்பாக்கத்திலிருந்து அடுத்த பேருந்து',conS:'விவரங்கள், பின் செய்ய அல்லது பகிர அட்டையைத் தட்டவும்.',ftAbout:'பனப்பாக்கம் பேருந்து நிலைய அட்டவணை, தமிழிலும் ஆங்கிலத்திலும். நேரங்கள் பேருந்து நிலைய பலகையைப் பின்பற்றுகின்றன; இது நேரடி கண்காணிப்பு அல்ல.',ftEx:'பக்கங்கள்',ftRs:'வளங்கள்',tz:'பனப்பாக்கம் நேரம்',sched:'அட்டவணை நேரம், நேரலை அல்ல',h1:'பனப்பாக்கத்திலிருந்து ஒவ்வொரு பேருந்தும், சரியான நேரத்தில்.',lede:'அடுத்த பேருந்தைப் பாருங்கள், ஊரைத் தேர்ந்தெடுங்கள், தினமும் செல்லும் பேருந்துகளைக் குறித்து வையுங்கள்.',pdf:'PDF பலகை பதிவிறக்கம்',s1:'இன்றைய பேருந்துகள்',s2:'செல்லுமிடங்கள்',s3:'முதல் – கடைசி',l3:'3D நிலையம் ஏற்றப்படுகிறது…',hint:'வழித்தடம் தேர்ந்தெடுக்க பேருந்தைத் தொடுங்கள். சுழற்ற இழுக்கவும்.',no3d:'இந்த சாதனத்தில் 3D காட்சி இல்லை. அட்டவணை வழக்கம்போல் செயல்படும்.',board:'அடுத்த புறப்பாடுகள்',search:'தேடு',ph:'ஊர், பேருந்து பெயர், எண் அல்லது நேரம் தேடுங்கள் (தமிழ் / English)',cph:'ஊர் அல்லது பேருந்து தேடுங்கள்',up:'இனி வருபவை மட்டும்',pinOnly:'குறித்தவை மட்டும்',h24:'24 மணி நேரம்',reset:'அழி',routes:'செல்லுமிடங்கள்',all:'அனைத்தும்',morning:'காலை',afternoon:'மதியம்',evening:'மாலை',night:'இரவு',allDay:'நாள் முழுவதும்',inMin:'{n} நிமிடத்தில்',inHM:'{h} மணி {m} நிமிடத்தில்',leaving:'இப்போது புறப்படுகிறது',gone:'புறப்பட்டது',noMore:'இன்று இனி பேருந்துகள் இல்லை.',tom:'நாளை முதல் பேருந்து {t} மணிக்கு.',eT:'பொருந்தும் பேருந்து இல்லை',eB:'வேறு ஊரைத் தேடுங்கள் அல்லது அழிக்கவும்.',dT:'இன்று இனி பேருந்துகள் இல்லை',dB:'முழு நாளையும் காண “இனி வருபவை மட்டும்” என்பதை அணைக்கவும்.',showAll:'முழு நாளையும் காட்டு',jump:'அடுத்த பேருந்துக்குச் செல்',nextTag:'அடுத்து',next:'அடுத்த புறப்பாடு',view:'விவரங்களுக்குத் தொடுங்கள்',pin:'இந்தப் பேருந்தைக் குறி',unpin:'குறியை நீக்கு',pinned:'குறிக்கப்பட்டது',wa:'WhatsApp',link:'இணைப்பை நகலெடு',rem:'நினைவூட்டல் சேர்',s3d:'3D-யில் காட்டு',others:'இந்தப் பேருந்தின் பிற புறப்பாடுகள்',copied:'இணைப்பு நகலெடுக்கப்பட்டது',pM:'குறிக்கப்பட்டது. “குறித்தவை மட்டும்” என்பதில் காணலாம்.',uM:'குறி நீக்கப்பட்டது',nN:'{n} பேருந்துகள்',n1:'1 பேருந்து',chk:'பலகையைப் பார்க்கவும்',bay:'நடைமேடை',foot:'அட்டவணை நேரங்கள் மட்டுமே, நேரலைக் கண்காணிப்பு அல்ல. பயணத்திற்கு முன் நிலையப் பலகையைப் பார்க்கவும்.',cr:'உருவாக்கியவர்',dev:'ஒவ்வொரு தொலைபேசியிலும் உள்ளூர் பேருந்து நிலைய அட்டவணையைக் கொண்டுசெல்ல உருவாக்கப்பட்ட Panapakkam Bus-இன் டெவலப்பர்.',close:'மூடு',cR:'செல்லுமிடங்கள்',cB:'பேருந்துகள்',cN:'எதுவும் கிடைக்கவில்லை',sample:'data/timetable.js ஏற்றப்படாததால் மாதிரித் தரவு காட்டப்படுகிறது.',unv:'இந்த அட்டவணையில் சரிபார்க்கப்படாத நேரங்கள் உள்ளன. நிலையத்தில் உறுதிப்படுத்தவும்.',off2:'சமீபத்திய அட்டவணையை ஏற்ற முடியாததால் கடைசியாகச் சேமித்த அட்டவணை காட்டப்படுகிறது.',min:'நிமி',now:'இப்போது',mine:'சேமித்த பேருந்துகள், வழித்தடங்கள்',gl:'ஒரே பார்வையில் நாள்',glh:'வடிகட்ட ஒரு மணி நேரத்தைத் தொடுங்கள்',tmr:'நாளை',nb:'இந்த அட்டவணை வழிகாட்டுதலுக்காக மட்டுமே; இது நேரலைக் கண்காணிப்பு அல்ல. பயணத்திற்கு முன் உள்ளூரில் புறப்பாட்டு விவரங்களை உறுதிப்படுத்தவும்.',am:'பயணத்திற்கு முன்',a1:'புறப்பாட்டு நேரத்தை உறுதிப்படுத்தவும்',a2:'இலக்கு பலகையைப் பார்க்கவும்',a3:'சற்று முன்பே வரவும்',a4:'கட்டணத்தைத் தயாராக வைத்திருங்கள்',a5:'சந்தேகம் இருந்தால் ஊழியர்களிடம் கேளுங்கள்',hub:'உள்ளூர் போக்குவரத்து வழிகாட்டி',it:'பனப்பாக்கம் பேருந்து',ib:'உள்ளூர் பேருந்து நேரங்களைப் பார்ப்பதற்கான வழிகாட்டி. நேரம் மற்றும் நடைமேடை விவரங்களைப் பேருந்து இயக்குநரிடம் அல்லது நிலையத்தில் உறுதிப்படுத்தவும்.',by:'உருவாக்கி பராமரிப்பவர்',rpl:'அறிமுகத்தை மீண்டும் காண்',srcF:'அட்டவணை ஏற்றப்பட்டது, {n} பேருந்துகள். புதுப்பிப்பு: {d}.',srcC:'இணையமற்ற நகல், {n} பேருந்துகள். கடைசி ஒத்திசைவு: {d}.',srcP:'இந்தச் சாதனத்தில் வெளியிடப்பட்டது, {n} பேருந்துகள். {d}.',smp:'மாதிரித் தரவு காட்டப்படுகிறது',ntf:'அறிவிப்பு அனுப்பு',ins:'நிறுவு',nons:'இந்த உலாவியில் அறிவிப்புகள் ஆதரிக்கப்படவில்லை.',nod:'அறிவிப்புகள் தடுக்கப்பட்டுள்ளன. உலாவி அமைப்புகளில் அனுமதிக்கவும்.',late:'10 நிமிடத்திற்கும் குறைவாக உள்ளதால் நினைவூட்டல் அமைக்கப்படவில்லை.',set:'10 நிமிடங்களுக்கு முன் நினைவூட்டல் அமைக்கப்பட்டது. இந்தத் தாவலைத் திறந்து வைக்கவும்.',navHome:'அடுத்த பேருந்து',navTimes:'நேரங்கள்',navDest:'செல்லுமிடங்கள்',navAlerts:'அறிவிப்புகள்',navAbout:'எங்களைப் பற்றி',csv:'CSV பதிவிறக்கம்',csvDone:'CSV பதிவிறக்கப்பட்டது',al:'சேவை அறிவிப்புகள்',alH:'தாமதம், ரத்து, வழிமாற்றம் – புதியவை முதலில்.',alNone:'தற்போது சேவை அறிவிப்புகள் இல்லை.',alExp:'{d} வரை',alPost:'பதிவு: {d}',alView:'வழித்தடத்தைக் காண்',tD:'தாமதம்',tC:'ரத்து',tV:'வழிமாற்றம்',tX:'நேர மாற்றம்',tI:'அறிவிப்பு',fav:'வழித்தடத்தைச் சேமி',favOn:'சேமிக்கப்பட்ட வழித்தடம்',favM:'வழித்தடம் சேமிக்கப்பட்டது',ufM:'வழித்தடம் நீக்கப்பட்டது',abT:'பனப்பாக்கம் பேருந்து நிலையம் பற்றி',abB:'பனப்பாக்கத்திலிருந்து வேலூர், ஆற்காடு, அரக்கோணம், காஞ்சிபுரம், சென்னை மற்றும் அருகிலுள்ள ஊர்களுக்குச் செல்லும் பேருந்துகளின் தினசரி அட்டவணை. நேரங்கள் திட்டமிட்ட புறப்பாடுகள்; போக்குவரத்து மற்றும் பணிமனை சுழற்சியால் மாறலாம்.',lvT:'நேரலைக் கண்காணிப்பு',lvB:'திட்டத்தில் உள்ளது. நேரலை இருப்பிடத்திற்கு GPS கருவிகள் அல்லது சரிபார்க்கப்பட்ட தரவு தேவை. அதுவரை இங்குள்ள அனைத்தும் அட்டவணை நேரங்களே.',qrT:'சமீபத்திய அட்டவணைக்கு ஸ்கேன் செய்யுங்கள்',qrB:'இதை நிலையப் பலகையில் ஒட்டலாம்.',qrDl:'QR பதிவிறக்கம்',qrNo:'QR காட்ட ஒருமுறை இணைய இணைப்பு தேவை.',call:'அழைக்க',wa2:'WhatsApp',mail:'மின்னஞ்சல்',adm:'நிர்வாகம்',off:'இணைப்பு இல்லை. சேமித்த அட்டவணை காட்டப்படுகிறது.',on:'மீண்டும் இணைப்பு உள்ளது.'}};
+const TW=[['Bharathi Roadways','பாரதி ரோட்வேஸ்'],['Bharathi Motors','பாரதி மோட்டார்ஸ்'],['M.S. Roadways','M.S. ரோட்வேஸ்'],['Town bus','நகரப்பேருந்து'],['Small bus','சிற்றுந்து'],['Vijayalakshmi','விஜயலட்சுமி'],['Kalaimagal','கலைமகள்'],['Dhanapathi','தனபதி'],['Balaji','பாலாஜி'],['Thulasi','துளசி'],['Thirumalpur','திருமால்பூர்'],['Thakkolam','தக்கோலம்'],['Koor','கூர்'],['Jagirthandalam','ஜாகீர்தண்டலம்'],['via ','வழி ']];
+const PER=['all','morning','afternoon','evening','night'];
+const LBL={delayed:'tD',cancelled:'tC',diverted:'tV',changed:'tX',info:'tI'},ACL={delayed:'--ac',cancelled:'--rd',diverted:'--bl',changed:'--ok',info:'--mut'};
+const S={rows:[],routes:[],alerts:[],sample:false,unv:false,src:'file',at:null,has3d:false,sel:null,lang:st.g('pkm-lang',(navigator.language||'').startsWith('ta')?'ta':'en'),h12:st.g('pkm-h12',true),pins:new Set(st.g('pkm-pins',[])),fav:new Set(st.g('pkm-fav',[])),f:{q:'',route:'',up:true,per:'all',pin:false,hr:null}};
+const t=(k,v)=>{let s=I[S.lang][k]??I.en[k]??k;if(v)for(const x in v)s=s.replace('{'+x+'}',v[x]);return s};
+const TT=(x,force)=>{if(S.lang!=='ta'&&!force)return x;let o=String(x);TW.forEach(w=>{o=o.split(w[0]).join(w[1])});return o};
+
+/* ===== Smart search: Tamil + English, common spelling variations ===== */
+const AL=[['vellore','velur','வேலூர்'],['chennai','madras','சென்னை'],['arakkonam','arakonam','அரக்கோணம்'],['kanchipuram','kancheepuram','kanjipuram','conjeevaram','காஞ்சிபுரம்','காஞ்சி'],['arcot','arkadu','aarkadu','ஆற்காடு'],['ranipet','ranipettai','இராணிப்பேட்டை','ராணிப்பேட்டை'],['walajah','walajapet','wallajah','வாலாஜா','வாலாஜாபேட்டை'],['sholinghur','solingur','sholingur','சோளிங்கர்'],['thakkolam','takkolam','தக்கோலம்'],['thirumalpur','tirumalpur','திருமால்பூர்'],['katpadi','kaatpadi','காட்பாடி'],['tiruvallur','thiruvallur','திருவள்ளூர்'],['tiruvannamalai','thiruvannamalai','திருவண்ணாமலை'],['sriperumbudur','ஸ்ரீபெரும்புதூர்'],['panapakkam','panapakam','பனப்பாக்கம்'],['nemili','நெமிலி'],['jagirthandalam','ஜாகீர்தண்டலம்'],['koor','கூர்'],['bharathi','bharati','பாரதி'],['balaji','பாலாஜி']];
+const nz=s=>String(s||'').toLowerCase().replace(/ee|ii/g,'i').replace(/oo/g,'u').replace(/sh/g,'s').replace(/gh/g,'g').replace(/th/g,'t').replace(/w/g,'v').replace(/([a-z])\1+/g,'$1').replace(/([a-z])h\b/g,'$1').replace(/\s+/g,' ').trim();
+const AN=AL.map(g=>g.map(nz));
+const vq=w=>{const n=nz(w);if(!n)return[];const o=new Set([n]);if(n.length>=2)AN.forEach(g=>{if(g.some(m=>m.includes(n)||(n.length>=4&&n.includes(m))))g.forEach(m=>o.add(m))});return[...o]};
+const qc=new Map(),qt=q=>{let v=qc.get(q);if(!v){v=q.split(/\s+/).filter(Boolean).map(vq);if(qc.size>200)qc.clear();qc.set(q,v)}return v};
+const tm=(h,q)=>qt(q).every(vs=>vs.some(v=>h.includes(v)));
+
+/* time (IST) */
+const F=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kolkata',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'});
+const now=()=>{const p={};for(const x of F.formatToParts(new Date()))p[x.type]=x.value;const h=+p.hour%24;return{y:+p.year,mo:+p.month,d:+p.day,s:+p.second,min:h*60+ +p.minute}};
+const fmt=m=>{const h=Math.floor(m/60)%24,mi=m%60;return S.h12?{a:`${h%12||12}:${pad(mi)}`,p:h>=12?'PM':'AM'}:{a:`${pad(h)}:${pad(mi)}`,p:''}};
+const fs=m=>{const f=fmt(m);return f.p?`${f.a} ${f.p}`:f.a};
+const per=m=>m>=240&&m<720?'morning':m>=720&&m<1020?'afternoon':m>=1020&&m<1260?'evening':'night';
+const eta=(m,n)=>{const sec=m*60-(n.min*60+n.s);if(sec<-60)return{x:t('gone'),soon:0,past:1,m:-1};const k=Math.max(0,Math.ceil(sec/60));if(!k)return{x:t('leaving'),soon:1,m:0};if(k<60)return{x:t('inMin',{n:k}),soon:k<=10,m:k};return{x:t('inHM',{h:Math.floor(k/60),m:k%60}),soon:0,m:k}};
+const toMin=s=>{const m=/(\d+):(\d+)\s*(AM|PM)?/i.exec(String(s));if(!m)return null;let h=+m[1];if(m[3])h=h%12+(m[3].toUpperCase()==='PM'?12:0);return(h%24)*60+ +m[2]};
+const dt=s=>{const d=new Date(s);return isNaN(d)?'':d.toLocaleString(S.lang==='ta'?'ta-IN':'en-IN',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'})};
+
+/* data */
+function build(D){S.routes=D.routes.map(r=>({id:r.id,name:r.name,ta:r.tamil||r.name,bay:r.bay||'',c:r.color||''}));const out=[];
+D.routes.forEach(r=>(r.entries||[]).forEach(e=>{const m=toMin(e.time);if(m==null)return;out.push({id:0,rk:r.id,time:e.time,min:m,bus:e.bus||'',busTa:e.busTa||'',dest:e.dest||'',destTa:e.destTa||e.dest||'',vf:!!e.verify,key:e.bus+'|'+r.id})}));
+out.sort((a,b)=>a.min-b.min).forEach((r,i)=>r.id=i);return out}
+function demo(){const f=m=>`${pad((Math.floor(m/60)%12)||12)}:${pad(m%60)} ${m>=720?'PM':'AM'}`;const R=[['vellore','Vellore','வேலூர்',290,1300,30,'Bharathi Roadways'],['chennai','Chennai','சென்னை',315,1305,60,'486'],['arakkonam','Arakkonam','அரக்கோணம்',330,1290,40,'Balaji']];
+return{routes:R.map(([id,n,ta,s,e,p,b],i)=>{const entries=[];for(let m=s;m<=e;m+=p)entries.push({time:f(m),bus:b,dest:'Panapakkam → '+n,destTa:'பனப்பாக்கம் → '+ta});return{id,name:n,tamil:ta,bay:i+1,entries}})}}
+let DATA=null;
+const BUS=r=>S.lang==='ta'?(r.busTa||TT(r.bus)):r.bus;
+const town=r=>{const p=(S.lang==='ta'?r.destTa:r.dest).split('→');return p[p.length-1].trim()};
+const rn=x=>S.lang==='ta'&&x.ta?x.ta:x.name;
+const tag=r=>{const m=String(r.bus).match(/(?:^|\s)([A-Za-z]{0,3}\d{1,3}[A-Za-z]?)(?=\s|$)/);return m?m[1]:''};
+const byId=i=>S.rows.find(r=>r.id===+i);
+const hay=r=>r._h||(r._h=nz([r.time,r.bus,r.busTa,TT(r.bus,1),r.dest,r.destTa].join(' ')));
+const match=(r,n)=>{const f=S.f;if(f.up&&r.min<n.min)return 0;if(f.route&&r.rk!==f.route)return 0;if(f.hr!=null&&Math.floor(r.min/60)!==f.hr)return 0;if(f.per!=='all'&&per(r.min)!==f.per)return 0;if(f.pin&&!S.pins.has(r.key))return 0;if(f.q&&!tm(hay(r),f.q))return 0;return 1};
+const IC={bell:'<svg viewBox="0 0 24 24"><path d="M6 9a6 6 0 0 1 12 0c0 6 2 7 2 7H4s2-1 2-7M10 20a2 2 0 0 0 4 0"/></svg>',star:'<svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>',wa:'<svg viewBox="0 0 24 24"><path d="M3 21l1.6-4.8A8.5 8.5 0 1 1 8 19.6z"/><path d="M9 9c0 3 3 6 6 6l1-1.5-2-1-1 .8c-1-.4-1.8-1.2-2.2-2.2l.8-1-1-2z"/></svg>',link:'<svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>',cal:'<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>',cube:'<svg viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9zM12 12l8-4.5M12 12v9M12 12 4 7.5"/></svg>'};
+
+/* render */
+function rNext(){const n=now(),r=S.rows.find(x=>x.min>=n.min),b=$('#nx');
+if(!r){const f=S.rows[0];b.disabled=true;b.innerHTML=`<div><small>${t('next')}</small><div class="ds">${t('noMore')}</div><div class="bs">${f?t('tom',{t:fs(f.min)}):''}</div></div>`;return}
+b.disabled=false;b.dataset.open=r.id;const f=fmt(r.min),e=eta(r.min,n),C=163.4,off=C*Math.min(1,e.m/60);
+const rv=e.m<=0?t('now'):e.m<60?`${e.m}<em>${t('min')}</em>`:`${Math.floor(e.m/60)}<em>h ${e.m%60}</em>`;
+b.innerHTML=`<div><small>${t('next')}</small><div class="tm">${f.a}${f.p?`<sub>${f.p}</sub>`:''}</div><div class="ds">${esc(town(r))}</div><div class="bs">${esc(BUS(r))}</div></div><div class="ring"><svg viewBox="0 0 64 64"><circle class="t" cx="32" cy="32" r="26"/><circle class="p" cx="32" cy="32" r="26" stroke-dasharray="${C}" style="stroke-dashoffset:${off}"/></svg><b><span>${rv}</span></b></div>`}
+function rBoard(flip){const n=now(),up=S.rows.filter(r=>r.min>=n.min).slice(0,6),h=$('#brows'),pv=h.dataset.p?JSON.parse(h.dataset.p):[];
+if(!up.length){h.innerHTML=`<div class="empty" style="border:0">${t('noMore')}</div>`;h.dataset.p='[]';return}
+h.innerHTML=up.map((r,i)=>{const f=fmt(r.min),e=eta(r.min,n),tg=tag(r);return`<button type="button" class="br${flip&&pv[i]!==r.id?' flip':''}" data-open="${r.id}"><span class="a">${f.a}${f.p?`<small>${f.p}</small>`:''}</span><span class="b"><strong>${esc(town(r))}</strong><span>${esc(BUS(r))}</span></span>${tg?`<span class="no">${esc(tg)}</span>`:'<span></span>'}<span class="eta${e.soon?' soon':''}">${esc(e.x)}</span></button>`}).join('');h.dataset.p=JSON.stringify(up.map(r=>r.id))}
+function rTabs(){const c={};S.rows.forEach(r=>c[r.rk]=(c[r.rk]||0)+1);const cur=S.f.route;
+$('#tabs').innerHTML=`<button type="button" class="tab" data-r="" aria-pressed="${!cur}">${t('all')}<em>${S.rows.length}</em></button>`+S.routes.map(r=>`<button type="button" class="tab" data-r="${esc(r.id)}" aria-pressed="${cur===r.id}">${S.fav.has(r.id)?'★ ':''}${esc(rn(r))}<em>${c[r.id]||0}</em></button>`).join('')}
+function rFav(){const b=$('#fv'),id=S.f.route;b.hidden=!id;if(id){const on=S.fav.has(id);b.textContent=(on?'★ ':'☆ ')+t(on?'favOn':'fav')}}
+function rTrip(r,n,nx){const f=fmt(r.min),e=eta(r.min,n),p=S.pins.has(r.key),tg=tag(r);
+return`<li class="trip${e.past?' past':''}${nx?' nxt':''}"><button type="button" class="to" data-open="${r.id}"><span class="tt">${f.a}${f.p?`<small>${f.p}</small>`:''}</span><span><span class="dd">${esc(town(r))}${nx?`<span class="tag">${t('nextTag')}</span>`:''}</span><span class="ss">${esc(BUS(r))}${r.vf?`<span class="chk">⚠ ${t('chk')}</span>`:''}</span></span>${tg?`<span class="no">${esc(tg)}</span>`:'<span></span>'}<span class="eta${e.soon?' soon':''}">${e.past?'':esc(e.x)}</span></button><div class="ac"><button type="button" class="ic${p?' on':''}" data-pin="${r.id}" aria-pressed="${p}" aria-label="${p?t('unpin'):t('pin')}">${IC.star}</button><button type="button" class="ic" data-wa="${r.id}" aria-label="${t('wa')}">${IC.wa}</button></div></li>`}
+function rTable(){const n=now(),L=S.rows.filter(r=>match(r,n)),ae=document.activeElement?.closest?.('.trip');const ai=ae?.querySelector('[data-open]')?.dataset.open;
+$('#cnt').textContent=L.length===1?t('n1'):t('nN',{n:L.length});const h=$('#rows');
+if(!L.length){const none=S.f.up&&!S.rows.some(r=>r.min>=n.min)&&!S.f.q&&!S.f.route;const later=S.f.up&&S.rows.some(r=>r.min<n.min);
+h.innerHTML=`<div class="empty"><h3>${none?t('dT'):t('eT')}</h3><p>${none?t('dB'):t('eB')}</p><div class="row">${later?`<button type="button" class="btn p" id="sa">${t('showAll')}</button>`:''}<button type="button" class="btn" id="er">${t('reset')}</button></div></div>`;$('#jp').classList.remove('show');return}
+const fu=L.find(r=>r.min>=n.min);let html='',ch=-1,o=false,nd=S.f.up||!L.some(r=>r.min<n.min)||!fu;
+for(const r of L){const hr=Math.floor(r.min/60);
+if(!nd&&r===fu){if(o){html+='</ul></div>';o=false;ch=-1}html+=`<div class="nl">${fs(n.min)}</div>`;nd=true}
+if(hr!==ch){if(o)html+='</ul></div>';const hf=fmt(hr*60);html+=`<div class="hr"><h3>${S.h12?hf.a.split(':')[0]+' '+hf.p:pad(hr)+':00'}</h3><ul>`;ch=hr;o=true}
+html+=rTrip(r,n,r===fu)}
+if(o)html+='</ul></div>';h.innerHTML=html;
+if(ai)h.querySelector(`[data-open="${ai}"]`)?.focus({preventScroll:true});upJ()}
+function rPer(){$('#per').innerHTML=PER.map(p=>`<button type="button" role="radio" aria-checked="${S.f.per===p}" data-p="${p}">${p==='all'?t('allDay'):t(p)}</button>`).join('')}
+function rStats(){$('#s1').textContent=S.rows.length;$('#s2').textContent=S.routes.length;const a=S.rows[0],b=S.rows.at(-1);$('#s3').textContent=a?`${fs(a.min)} – ${fs(b.min)}`.replace(/ (AM|PM)/g,'$1'):'–'}
+function sync(){$('#q').value=S.f.q;$('#sbx').classList.toggle('on',!!S.f.q);$('#up').checked=S.f.up;$('#pn').checked=S.f.pin;$('#h24').checked=!S.h12}
+function rBars(){const n=now(),c=Array(24).fill(0);S.rows.forEach(r=>{if(!S.f.route||r.rk===S.f.route)c[Math.floor(r.min/60)]++});const mx=Math.max(1,...c),ch=Math.floor(n.min/60);
+$('#bars').innerHTML=c.map((v,h)=>`<button type="button" class="bar${S.f.hr===h?' sel':''}${h===ch?' cur':''}" data-h="${h}" aria-pressed="${S.f.hr===h}" aria-label="${fs(h*60)}: ${v}" title="${fs(h*60)}: ${v}"><i style="--v:${v/mx*100}%"></i></button>`).join('');
+$('#axis').innerHTML=c.map((_,h)=>`<span>${h%3?'':(S.h12?(h%12||12)+(h<12?'a':'p'):pad(h))}</span>`).join('')}
+function rMine(){const n=now(),h=$('#mine'),L=[],R=[];
+S.pins.forEach(k=>{const rs=S.rows.filter(r=>r.key===k);if(rs.length)L.push(rs.find(r=>r.min>=n.min)||rs[0])});
+S.fav.forEach(id=>{const rt=S.routes.find(x=>x.id===id);if(!rt)return;const rs=S.rows.filter(r=>r.rk===id);if(rs.length)R.push({rt,r:rs.find(r=>r.min>=n.min)||rs[0]})});
+h.hidden=!L.length&&!R.length;if(h.hidden)return;L.sort((a,b)=>(a.min<n.min)*1440+a.min-((b.min<n.min)*1440+b.min));
+$('#mrow').innerHTML=L.map(r=>{const f=fmt(r.min),e=eta(r.min,n);return`<button type="button" class="mc" data-open="${r.id}"><b>${f.a}<small>${f.p}</small></b><span>${esc(town(r))}</span><em class="${e.soon?'soon':''}">${r.min<n.min?t('tmr'):esc(e.x)}</em></button>`}).join('')+
+R.map(({rt,r})=>{const f=fmt(r.min),e=eta(r.min,n);return`<button type="button" class="mc fr" data-fr="${esc(rt.id)}"><b>${f.a}<small>${f.p}</small></b><span>★ ${esc(rn(rt))}</span><em class="${e.soon?'soon':''}">${r.min<n.min?t('tmr'):esc(e.x)}</em></button>`}).join('')}
+const actv=a=>!a.expires||new Date(a.expires).getTime()>Date.now();
+function rAl(){const L=S.alerts.filter(actv).sort((a,b)=>new Date(b.created||0)-new Date(a.created||0));const na=$('#na');na.textContent=L.length;na.hidden=!L.length;
+$('#al').innerHTML=L.length?L.map(a=>{const ty=LBL[a.type]?a.type:'info',rt=S.routes.find(x=>x.id===a.route),tx=S.lang==='ta'&&a.textTa?a.textTa:a.text;
+const meta=[a.created?t('alPost',{d:dt(a.created)}):'',a.expires?t('alExp',{d:dt(a.expires)}):'',rt?rn(rt):''].filter(Boolean).join(' · ');
+return`<article class="ai" style="--c:var(${ACL[ty]})"><span class="ty">${t(LBL[ty])}</span><div><p>${esc(tx)}</p><small>${esc(meta)}</small></div>${rt?`<button type="button" class="lk" data-fr="${esc(rt.id)}">${t('alView')}</button>`:''}</article>`}).join(''):`<div class="empty">${t('alNone')}</div>`}
+function apply(){sync();rPer();rTabs();rFav();rBars();rTable()}
+function stat(){const d=S.at?dt(S.at):'',k=S.sample?'smp':S.src==='cache'?'srcC':S.src==='pub'?'srcP':'srcF';$('#fs').textContent=t(k,{n:S.rows.length,d});$('.fd').classList.toggle('warn',S.sample||S.src==='cache')}
+function banner(){const m=[];if(S.sample)m.push(t('sample'));else if(S.unv)m.push(t('unv'));if(S.src==='cache')m.push(t('off2'));$('#bn').innerHTML=m.map(x=>`<div class="banner">${esc(x)}</div>`).join('')}
+function contact(){const c=[];if(CFG.phone)c.push(`<a class="btn" href="tel:${esc(CFG.phone.replace(/\s/g,''))}">${t('call')}</a>`);if(CFG.whatsapp)c.push(`<a class="btn" href="https://wa.me/${esc(CFG.whatsapp.replace(/\D/g,''))}" target="_blank" rel="noopener">${t('wa2')}</a>`);if(CFG.email)c.push(`<a class="btn" href="mailto:${esc(CFG.email)}">${t('mail')}</a>`);$('#ctr').innerHTML=c.join('');$('#ctr').hidden=!c.length}
+function i18n(){document.documentElement.lang=S.lang;$$('[data-i]').forEach(e=>e.textContent=t(e.dataset.i));$$('[data-ip]').forEach(e=>e.placeholder=t(e.dataset.ip));$('#ll').textContent=S.lang==='ta'?'English':'தமிழ்';
+const l=$('.stage-loading');if(l&&$('#stage').dataset.no)l.textContent=t('no3d');icon();if(!S.qr)$('#qrb').textContent=t('qrNo')}
+function all(){rStats();stat();banner();rMine();rNext();rBoard(false);rAl();apply();i18n();contact();draw3D()}
+
+/* theme */
+function icon(){const d=document.documentElement.dataset.theme==='dark';$('#ti').innerHTML=d?'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>':'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>';$('meta[name=theme-color]').content=d?'#0A1814':'#EEF2EC'}
+let tt;const toast=m=>{const e=$('#toast');e.textContent=m;e.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>e.classList.remove('show'),2400)};
+const dl=(blob,name)=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),2e3)};
+
+/* 3D (optional bus3d.js) */
+const sign=r=>{if(S.has3d&&r)window.Bus3D.setSign(r.rk,S.lang==='ta'?r.destTa:r.dest,BUS(r),r.time)};
+function draw3D(){if(!S.has3d)return;const n=now();S.routes.forEach(rt=>sign(S.rows.find(x=>x.rk===rt.id&&x.min>=n.min)||S.rows.find(x=>x.rk===rt.id)));const c=byId(S.sel);if(c)sign(c)}
+function act(r){S.sel=r.id;if(S.has3d){sign(r);window.Bus3D.focus(r.rk)}}
+function init3D(ok){const s=$('#stage'),fail=()=>{s.dataset.no=1;const l=$('.stage-loading');if(l)l.textContent=t('no3d');$('.stage-hint').style.display='none'};
+if(!ok||!window.Bus3D||!window.THREE)return fail();
+try{S.has3d=!!window.Bus3D.init(s,DATA.routes,id=>{S.f.route=id;apply();const n=now(),r=S.rows.find(x=>x.rk===id&&x.min>=n.min)||S.rows.find(x=>x.rk===id);if(r)act(r);const rt=S.routes.find(x=>x.id===id);if(rt)toast(rn(rt))})}catch(e){S.has3d=false}
+if(!S.has3d)return fail();draw3D();const n=now(),x=S.rows.find(r=>r.min>=n.min)||S.rows[0];if(x)act(x)}
+
+/* actions */
+const url=r=>{try{return`${location.origin}${location.pathname}#r=${encodeURIComponent(r.rk)}`}catch{return location.href}};
+function wa(r){const m=`🚌 *Panapakkam Bus*\n📍 Panapakkam ➔ ${town(r)}\n🕒 ${r.time}\n🚍 ${BUS(r)}\n\n${t('foot')}`;window.open('https://api.whatsapp.com/send?text='+encodeURIComponent(m),'_blank','noopener')}
+function pin(r){const w=S.pins.has(r.key);w?S.pins.delete(r.key):S.pins.add(r.key);st.s('pkm-pins',[...S.pins]);toast(w?t('uM'):t('pM'));rTable();rMine();if($('#sheet').open)sheet(r.id,true)}
+async function notify(r){if(!('Notification'in window))return toast(t('nons'));
+if(Notification.permission!=='granted'&&await Notification.requestPermission()!=='granted')return toast(t('nod'));
+const n=now(),ms=((r.min-10)*60-(n.min*60+n.s))*1000;if(ms<=0)return toast(t('late'));
+setTimeout(()=>new Notification('Panapakkam Bus',{body:`${BUS(r)} → ${town(r)}, ${fs(r.min)}`}),ms);toast(t('set'))}
+function ics(r){const n=now(),u=new Date(Date.UTC(n.y,n.mo-1,n.d)+(r.min-330)*6e4),z=d=>d.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');
+const b=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Panapakkam Bus//EN','BEGIN:VEVENT',`UID:${r.id}-${n.y}${n.mo}${n.d}@pkm-bus`,`DTSTAMP:${z(new Date())}`,`DTSTART:${z(u)}`,`DTEND:${z(new Date(u.getTime()+18e5))}`,`SUMMARY:${(r.bus+' to '+r.dest.split('→').pop()).replace(/[,;\n]/g,' ')}`,'LOCATION:Panapakkam bus stand','BEGIN:VALARM','TRIGGER:-PT15M','ACTION:DISPLAY','DESCRIPTION:Bus leaves soon','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
+dl(new Blob([b],{type:'text/calendar'}),'panapakkam-bus.ics')}
+function csv(){const n=now(),L=S.rows.filter(r=>match(r,n));if(!L.length)return toast(t('eT'));
+const q=v=>{let s=String(v??'');if(/^[=+\-@]/.test(s))s="'"+s;return'"'+s.replace(/"/g,'""')+'"'},last=x=>String(x).split('→').pop().trim();
+const head=['Time','Time 24h','Destination','Destination (Tamil)','Bus','Bus (Tamil)','Route','Needs verification'];
+const rows=L.map(r=>{const rt=S.routes.find(x=>x.id===r.rk);return[r.time,`${pad(Math.floor(r.min/60))}:${pad(r.min%60)}`,last(r.dest),last(r.destTa),r.bus,r.busTa||TT(r.bus,1),rt?rt.name:r.rk,r.vf?'Yes':'No'].map(q).join(',')});
+dl(new Blob(['\ufeff'+[head.map(q).join(','),...rows].join('\r\n')],{type:'text/csv;charset=utf-8'}),`panapakkam-timetable-${n.y}-${pad(n.mo)}-${pad(n.d)}.csv`);toast(t('csvDone'))}
+function drawQR(){const b=$('#qrb');S.qr='';
+if(!window.qrcode){b.textContent=t('qrNo');return}
+try{const u=location.href.split('#')[0],q=window.qrcode(0,'M');q.addData(u);q.make();S.qr=q.createSvgTag({cellSize:4,margin:0,scalable:true});b.innerHTML=S.qr;$('#qrd').hidden=false}catch{b.textContent=t('qrNo')}}
+function sheet(id,keep){const r=byId(id);if(!r)return;const n=now(),f=fmt(r.min),e=eta(r.min,n),p=S.pins.has(r.key),same=S.rows.filter(x=>x.key===r.key),rt=S.routes.find(x=>x.id===r.rk),sh=$('#sheet'),tg=tag(r)||(rt?rn(rt):'');
+sh.innerHTML=`<div class="sb2"><div class="sh"><span class="no">${esc(tg)}</span><button type="button" class="ic" data-close aria-label="${t('close')}"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div><div class="big">${f.a}${f.p?`<small>${f.p}</small>`:''}</div><p class="se${e.soon?' soon':''}">${esc(e.x)} · ${esc(BUS(r))}${r.vf?`<span class="chk">⚠ ${t('chk')}</span>`:''}</p>
+<div class="rt"><span>${S.lang==='ta'?'பனப்பாக்கம்':'Panapakkam'}</span><i></i><span>${esc(town(r))}</span></div>${rt&&rt.bay?`<p class="se" style="margin:-10px 0 18px">${t('bay')} ${esc(rt.bay)}</p>`:''}
+<h4>${t('others')}</h4><div class="deps">${same.map(x=>`<span class="dep${x.min<n.min?' past':''}${x.id===r.id?' cur':''}">${fs(x.min)}</span>`).join('')}</div>
+<div class="sa"><button type="button" data-spin="${r.id}">${IC.star}${p?t('pinned'):t('pin')}</button><button type="button" data-swa="${r.id}">${IC.wa}${t('wa')}</button><button type="button" data-slk="${r.id}">${IC.link}${t('link')}</button><button type="button" data-sics="${r.id}">${IC.cal}${t('rem')}</button><button type="button" data-snt="${r.id}">${IC.bell}${t('ntf')}</button>${S.has3d?`<button type="button" data-s3="${r.id}">${IC.cube}${t('s3d')}</button>`:''}</div></div>`;
+act(r);if(!keep&&!sh.open)sh.showModal()}
+function goRoute(id){S.f.route=id;S.f.q='';apply();$('#tt').scrollIntoView({behavior:RM?'auto':'smooth'});const n=now(),r=S.rows.find(x=>x.rk===id&&x.min>=n.min)||S.rows.find(x=>x.rk===id);if(r)act(r)}
+
+/* command palette */
+let ci=[],cx=0;
+function oc(){const d=$('#cmd');if(d.open)return;$('#ci').value='';rc('');d.showModal();setTimeout(()=>$('#ci').focus(),30)}
+function rc(q){q=q.trim();const bs=new Map();S.rows.forEach(r=>{const b=bs.get(r.bus)||{n:0,r};b.n++;bs.set(r.bus,b)});
+const rl=S.routes.filter(r=>!q||tm(nz(r.name+' '+r.ta),q)).slice(0,7),bl=[...bs.entries()].filter(([k,v])=>k&&(!q||tm(nz(k+' '+v.r.busTa+' '+TT(k,1)),q))).sort((a,b)=>b[1].n-a[1].n).slice(0,7);
+ci=[...rl.map(r=>({k:'r',v:r.id,l:rn(r),s:t('nN',{n:S.rows.filter(x=>x.rk===r.id).length})})),...bl.map(([k,v])=>({k:'b',v:k,l:BUS(v.r),s:town(v.r)}))];cx=0;
+let h='',i=0;const sec=(ti,k)=>{const it=ci.filter(x=>x.k===k);if(!it.length)return;h+=`<h5>${ti}</h5>`+it.map(x=>`<button type="button" role="option" class="ci" data-c="${i++}"><span>${esc(x.l)}</span><small>${esc(x.s)}</small></button>`).join('')};
+sec(t('cR'),'r');sec(t('cB'),'b');$('#cl').innerHTML=h||`<p style="padding:26px;text-align:center;color:var(--mut)">${t('cN')}</p>`;mk()}
+function mk(){$$('.ci').forEach((e,i)=>{e.classList.toggle('act',i===cx);if(i===cx)e.scrollIntoView({block:'nearest'})})}
+function pc(i){const it=ci[i];if(!it)return;S.f.route='';S.f.q='';if(it.k==='r')S.f.route=it.v;else S.f.q=it.v;$('#cmd').close();apply();$('#tt').scrollIntoView({behavior:RM?'auto':'smooth'})}
+function upJ(){const e=$('.trip.nxt'),j=$('#jp');if(!e){j.classList.remove('show');return}const r=e.getBoundingClientRect(),q=$('#tt').getBoundingClientRect();j.classList.toggle('show',q.top<innerHeight*.4&&(r.bottom<70||r.top>innerHeight))}
+
+/* loader */
+const GR=['வணக்கம்','Welcome','பயணம் தொடங்கட்டும்','Let’s go'];
+async function boot(tasks){const b=$('#boot'),wm=$('#wm');let seen=0;try{seen=sessionStorage.getItem('pkm-seen')}catch{}
+'Panapakkam'.split('').forEach((c,i)=>{const s=document.createElement('span');s.textContent=c;s.style.setProperty('--i',i);wm.appendChild(s)});
+const fb=$('#fb'),D=['VELLORE','CHENNAI','ARAKKONAM','KANCHIPURAM','ARCOT'],W=13,CH='ABCDEFGHIJKLMNOPQRSTUVWXYZ';let di=0;
+fb.innerHTML='<b> </b>'.repeat(W);const cells=[...fb.children];
+const flip=x=>{const q=x.padEnd(W,' ');cells.forEach((c,i)=>{let n=0;const k=6+i*2,iv=setInterval(()=>{n++;c.textContent=n>=k?q[i]:CH[Math.random()*26|0];if(n>=k)clearInterval(iv)},40)})};
+flip(D[0]);const ft=setInterval(()=>flip(D[++di%D.length]),1500);
+const min=seen||RM?700:2800,total=tasks.length+1;let done=0,prog=0,fin=false,gi=0;tasks.forEach(p=>p.then(()=>done++,()=>done++));let sk;Promise.race([sl(min),new Promise(r=>sk=r)]).then(()=>done++);$('#skp').onclick=()=>sk();
+const gt=setInterval(()=>{gi=(gi+1)%GR.length;$('#rg').textContent=GR[gi]},750),t0=performance.now(),stops=$$('.rl u');
+await new Promise(res=>{const fr=nw=>{if(!$("#boot")){res();return}const tg=Math.min(done/total,1);prog+=(tg-prog)*.08;const sh=tg>=1&&prog>.985?1:prog,w=($('.rl')?.clientWidth||0);
+$('#rf').style.width=sh*100+'%';$('#rb').style.left=Math.max(40,sh*w)+'px';$('#rp').textContent=Math.round(sh*100)+'%';stops.forEach((u,i)=>u.classList.toggle('on',sh>=i/4-.001));
+if((sh>=1)||nw-t0>9000){if(!fin){fin=true;setTimeout(res,500)}}requestAnimationFrame(fr)};requestAnimationFrame(fr)});
+clearInterval(gt);clearInterval(ft);try{sessionStorage.setItem('pkm-seen','1')}catch{}
+b.classList.add('go');await sl(RM?50:1300);end()}
+function end(){$('#boot')?.remove();document.body.classList.remove('boot');document.body.classList.add('in');$('#top').removeAttribute('inert');upJ()}
+
+/* events */
+function bind(){
+$('#lg').onclick=()=>{S.lang=S.lang==='ta'?'en':'ta';st.s('pkm-lang',S.lang);all()};
+$('#h24').onchange=e=>{S.h12=!e.target.checked;st.s('pkm-h12',S.h12);all()};
+$('#tb').onclick=e=>{const n=document.documentElement.dataset.theme==='dark'?'light':'dark',go=()=>{document.documentElement.dataset.theme=n;st.s('pkm-theme',n);icon()};
+if(document.startViewTransition&&!RM){const x=e.clientX,y=e.clientY,r=Math.hypot(Math.max(x,innerWidth-x),Math.max(y,innerHeight-y));
+document.startViewTransition(go).ready.then(()=>document.documentElement.animate({clipPath:[`circle(0 at ${x}px ${y}px)`,`circle(${r}px at ${x}px ${y}px)`]},{duration:650,easing:'ease-in-out',pseudoElement:'::view-transition-new(root)'}))}else go()};
+let ip;addEventListener('beforeinstallprompt',e=>{e.preventDefault();ip=e;$('#ins').hidden=false});
+$('#ins').onclick=async()=>{if(!ip)return;ip.prompt();await ip.userChoice;ip=null;$('#ins').hidden=true};
+addEventListener('offline',()=>toast(t('off')));addEventListener('online',()=>toast(t('on')));
+$('#oc').onclick=oc;$('#cb').onclick=$('#hb').onclick=()=>$('#dev').showModal();$('#rpl').onclick=()=>{try{sessionStorage.removeItem('pkm-seen')}catch{}location.reload()};$('#dc').onclick=()=>$('#dev').close();
+$$('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close()}));
+$('#q').addEventListener('input',e=>{S.f.q=e.target.value;apply()});$('#qc').onclick=()=>{S.f.q='';apply();$('#q').focus()};
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+if(SR){const m=$('#mic');m.hidden=false;m.onclick=()=>{const r=new SR();r.lang=S.lang==='ta'?'ta-IN':'en-IN';r.onstart=()=>m.classList.add('rec');r.onend=()=>m.classList.remove('rec');r.onresult=e=>{S.f.q=e.results[0][0].transcript.replace(/\.$/,'');apply()};try{r.start()}catch{}}}
+document.addEventListener('pointermove',e=>{const c=e.target.closest?.('.nx');if(c){const r=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')}},{passive:true});
+$('#up').onchange=e=>{S.f.up=e.target.checked;apply()};$('#pn').onchange=e=>{S.f.pin=e.target.checked;apply()};
+const rs=()=>{S.f={q:'',route:'',up:true,per:'all',pin:false,hr:null};apply()};$('#rs').onclick=rs;$('#csv').onclick=csv;
+$('#fv').onclick=()=>{const id=S.f.route;if(!id)return;const on=S.fav.has(id);on?S.fav.delete(id):S.fav.add(id);st.s('pkm-fav',[...S.fav]);toast(t(on?'ufM':'favM'));rFav();rTabs();rMine()};
+$('#qrd').onclick=()=>{if(S.qr)dl(new Blob([S.qr.replace(/(<svg[^>]*>)/,'$1<rect width="100%" height="100%" fill="#fff"/>')],{type:'image/svg+xml'}),'panapakkam-bus-qr.svg')};
+$('#per').addEventListener('click',e=>{const b=e.target.closest('[data-p]');if(b){S.f.per=b.dataset.p;apply()}});
+$('#tabs').addEventListener('click',e=>{const b=e.target.closest('[data-r]');if(!b)return;S.f.route=b.dataset.r;apply();const n=now(),r=S.f.route&&(S.rows.find(x=>x.rk===S.f.route&&x.min>=n.min)||S.rows.find(x=>x.rk===S.f.route));if(r)act(r)});
+document.addEventListener('click',e=>{const g=s=>e.target.closest(s);let x;
+if(x=g('[data-open]'))return sheet(x.dataset.open);if(x=g('[data-pin]'))return pin(byId(x.dataset.pin));if(x=g('[data-wa]'))return wa(byId(x.dataset.wa));
+if(x=g('[data-fr]'))return goRoute(x.dataset.fr);
+if(g('[data-close]'))return $('#sheet').close();if(x=g('[data-spin]'))return pin(byId(x.dataset.spin));if(x=g('[data-swa]'))return wa(byId(x.dataset.swa));
+if(x=g('[data-slk]')){const u=url(byId(x.dataset.slk));return navigator.clipboard.writeText(u).then(()=>toast(t('copied')),()=>toast(u))}
+if(x=g('[data-snt]'))return notify(byId(x.dataset.snt));
+if(x=g('[data-sics]'))return ics(byId(x.dataset.sics));
+if(x=g('[data-s3]')){$('#sheet').close();act(byId(x.dataset.s3));return $('#stage').scrollIntoView({behavior:RM?'auto':'smooth',block:'center'})}
+if(x=g('[data-h]')){const h=+x.dataset.h;S.f.hr=S.f.hr===h?null:h;if(S.f.hr!=null&&h<Math.floor(now().min/60))S.f.up=false;apply();return $('#tt').scrollIntoView({behavior:RM?'auto':'smooth'})}
+if(g('#sa')){S.f.up=false;return apply()}if(g('#er'))return rs();if(x=g('[data-c]'))pc(+x.dataset.c)});
+$('#jp').onclick=()=>$('.trip.nxt')?.scrollIntoView({behavior:RM?'auto':'smooth',block:'center'});addEventListener('scroll',upJ,{passive:true});
+const c=$('#ci');c.addEventListener('input',()=>rc(c.value));
+c.addEventListener('keydown',e=>{if(e.key==='ArrowDown'){e.preventDefault();cx=Math.min(ci.length-1,cx+1);mk()}else if(e.key==='ArrowUp'){e.preventDefault();cx=Math.max(0,cx-1);mk()}else if(e.key==='Enter'){e.preventDefault();pc(cx)}});
+document.addEventListener('keydown',e=>{const ty=/^(INPUT|TEXTAREA)$/.test(document.activeElement?.tagName);if((e.key==='k'&&(e.metaKey||e.ctrlKey))||(e.key==='/'&&!ty)){e.preventDefault();oc()}})}
+
+let lm=-1;
+function tick(){const n=now(),f=fmt(n.min);$('#clk').textContent=`${f.a}:${pad(n.s)}${f.p?' '+f.p:''}`;$('#bc').textContent=fs(n.min);
+if(n.min!==lm){lm=n.min;if(S.rows.length){rNext();rMine();rBoard(true);rBars();rTable();rAl()}}}
+
+/* Pick the best available timetable: admin-published copy, live file, then the offline cache */
+function pick(){const fd=window.TIMETABLE&&Array.isArray(window.TIMETABLE.routes)&&window.TIMETABLE.routes.length?window.TIMETABLE:null,pub=st.g('pkm-pub',null);
+if(pub&&Array.isArray(pub.routes)&&pub.routes.length){S.src='pub';S.at=pub.meta&&pub.meta.updated;return pub}
+if(fd){const prev=st.g('pkm-cache',null),same=prev&&prev.d&&JSON.stringify(prev.d)===JSON.stringify(fd);S.src='file';S.at=(fd.meta&&fd.meta.updated)||(same?prev.at:new Date().toISOString());if(!same)st.s('pkm-cache',{at:S.at,d:fd});return fd}
+const c=st.g('pkm-cache',null);if(c&&c.d&&Array.isArray(c.d.routes)&&c.d.routes.length){S.src='cache';S.at=c.at;return c.d}
+return null}
+
+/* init */
+async function init(){
+if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js').catch(()=>{});
+document.documentElement.lang=S.lang;
+const h=new URLSearchParams(location.hash.slice(1));if(h.get('r'))S.f.route=h.get('r');
+const dp=ld('data/timetable.js').then(()=>{DATA=pick();let r=DATA?build(DATA):[];if(!r.length){S.sample=true;S.src='demo';DATA=demo();r=build(DATA)}
+S.unv=!S.sample&&!!(DATA.meta&&DATA.meta.verified===false);S.alerts=Array.isArray(DATA.alerts)?DATA.alerts:[];S.rows=r;bind();all();tick();setInterval(tick,1000)});
+const tp=ld('https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js').then(ok=>ok?ld('bus3d.js'):false);
+ld('https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js',9000).then(drawQR);
+const fp=Promise.race([document.fonts?.ready??Promise.resolve(),sl(2500)]);
+Promise.all([dp,tp]).then(([,ok])=>init3D(ok));
+try{await boot([dp,tp,fp])}catch(e){console.error('Panapakkam Bus initialization failed:',e)}finally{end()}}
+init();
+})();
+</script>
+<script>document.getElementById('hs')?.addEventListener('click',()=>document.getElementById('oc')?.click());</script>
+</body>
+</html>
